@@ -1,0 +1,50 @@
+{
+  "name": "hapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npx babel src --out-dir dist",
+    "start": "node dist/server",
+    "prestart:dev": "npx babel src --out-dir dist",
+    "start:dev": "nodemon dist/server",
+    "test": "cross-env NODE_ENV=test jest --testTimeout=10000 --detectOpenHandles --watchAll",
+    "test:coverage": "cross-env NODE_ENV=test jest --testTimeout=10000 --coverage"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "uploads"
+    ]
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/basic": "^5.1.1",
+    "@hapi/cookie": "^10.1.2",
+    "@hapi/hapi": "^18.4.0",
+    "bcryptjs": "^2.4.3",
+    "jest": "^24.9.0",
+    "mysql": "^2.17.1",
+    "sqlite3": "^4.1.1",
+    "typeorm": "^0.2.21"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/node": "^7.7.7",
+    "@babel/plugin-syntax-dynamic-import": "^7.7.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.7.5",
+    "@babel/plugin-transform-runtime": "^7.7.6",
+    "@babel/polyfill": "^7.7.0",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/runtime": "^7.7.7",
+    "cross-env": "^6.0.3",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.2",
+    "path": "^0.12.7",
+    "sqlite": "^3.0.3",
+    "supertest": "^4.0.2"
+  }
+}
